@@ -1,0 +1,14 @@
+parent(person("hassan"),person("aya")).
+parent(person("hassan"),person("mahmoud")).
+parent(person("mahmoud"),person("aly")).
+parent(person("aya"),person("mohamed")).
+parent(person("mohamed"),person("yara")).
+
+grandparent(X,Y):-
+parent(Z,Y),
+parent(X,Z).
+
+uncle(J,K):-
+parent(F,K),
+parent(G,F),
+parent(G,J).
